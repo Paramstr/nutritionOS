@@ -3,22 +3,12 @@
 import Link from "next/link"
 import { ChevronDown, Send, FolderOpen, Lock, Utensils, CalendarDays, ClipboardList, Star, Building } from "lucide-react"
 import Image from "next/image"
-import ProductTabs from "@/components/product-tabs"
 import { FeatureCard } from "@/components/feature-card"
-import { useRef, useEffect } from "react";
 import { InfoCard } from "@/components/info-card"
+import { ProductDetailCard } from "@/components/product-detail-card"
+import { FruitButton } from "@/components/FruitButton";
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Video play() in useEffect was prevented:", error);
-      });
-    }
-  }, []);
-
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -69,6 +59,7 @@ export default function Home() {
         </div> */}
 
         {/* Hero Content */}
+        
         <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
             Precision Nutrition Platform
@@ -97,7 +88,10 @@ export default function Home() {
                 <span className="text-4xl transform -rotate-6 opacity-100 translate-y-2 translate-x-0 transition-all duration-300 ease-in-out group-hover:scale-125 group-hover:drop-shadow-lg blur-sm group-hover:blur-none" role="img" aria-label="Avocado">🥑</span>
                 <span className="text-4xl transform rotate-12 opacity-100 translate-x-0 translate-y-3 transition-all duration-300 ease-in-out group-hover:scale-125 group-hover:drop-shadow-lg blur-sm group-hover:blur-none" role="img" aria-label="Apple">🍎</span>
               </div>
+
+         
             </div>
+
           </div>
 
           <div className="flex justify-center items-center gap-1">
@@ -162,67 +156,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Product Details Section */}
-      <section className="container mx-auto px-4 py-20 bg-white relative">
-        <div className="max-w-6xl mx-auto relative z-10 text-center">
+      {/* Product Details Section - Using ProductDetailCard component */}
+      <section className="container mx-auto px-4 py-28 bg-white relative">
+        <div className="max-w-8xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">How restaurants grow using Owner</h2>
           <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
             Owner gives you the same tools that major national brands use to drive sales. We learn what works for them, then give it to local restaurant owners.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {/* Card 1 - Image */}
-            <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col items-center">
-              <div className="w-full h-160 bg-white rounded-md mb-4 flex items-center justify-center border border-gray-200">
-                <Image src="/details section/pancakes.png" alt="Pancakes" width={200} height={200} objectFit="contain" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Website and Online Ordering</h3>
-              <p className="text-gray-600 text-sm">designed to increase orders.</p>
-            </div>
-
-            {/* Card 2 - Video */}
-            <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col items-center">
-              <div className="w-full h-160 bg-white rounded-md mb-4 flex items-center justify-center border border-gray-200 overflow-hidden">
-                <video
-                  ref={videoRef}
-                  src="/details section/making meal.mp4"
-                  width="100%"
-                  height="100%"
-                  className="object-contain"
-                  autoPlay
-                  muted
-                  loop
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Dynamic Meal Preparation</h3>
-              <p className="text-gray-600 text-sm">Watch how easy it is to create your meals.</p>
-            </div>
-
-            {/* Card 3 - Placeholder */}
-            <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col items-center">
-              <div className="w-full h-160 bg-white rounded-md mb-4 flex items-center justify-center border border-gray-200">
-                {/* Placeholder for actual image component */}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Automated marketing</h3>
-              <p className="text-gray-600 text-sm">proven to drive sales.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-stretch">
+            <ProductDetailCard
+              title="Website and Online Ordering"
+              description="designed to increase orders."
+              mediaSrc="/details section/pancakes.png"
+              mediaType="image"
+              mediaAlt="Pancakes"
+            />
+            <ProductDetailCard
+              title="Dynamic Meal Preparation"
+              description="Watch how easy it is to create your meals."
+              mediaSrc="/details section/making meal.mp4"
+              mediaType="video"
+              mediaAlt="Meal preparation video"
+            />
+            <ProductDetailCard
+              title="Automated marketing"
+              description="proven to drive sales."
+              mediaSrc="/details section/pancakes.png"
+              mediaType="image"
+              mediaAlt="Marketing illustration"
+            />
           </div>
 
           <div>
+
+          
             <Link
-              href="/how-it-works" // You can change this link later
-              className="inline-flex items-center justify-center px-6 py-3 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300"
-            >
-              See how it works <span className="ml-2">&gt;</span>
-            </Link>
+                href="/get-started"
+                className="inline-flex items-center justify-center px-12 py-6 bg-black text-white rounded-full text-md font-medium  relative z-10 transition-all duration-300 ease-in-out hover:scale-105 shadow-xl"
+              >
+                See how it works
+              </Link>
+              
+            
+            
           </div>
         </div>
       </section>
 
       {/* Collaboration Features Section */}
-      <section className="container mx-auto px-4 py-20 relative">
+      <section className="container mx-auto px-4 py-20 relative mb-32">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="mb-2">
             <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm font-medium">Platform Features</span>

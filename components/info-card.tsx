@@ -24,7 +24,7 @@ export function InfoCard({
     <>
       <div
         className={`
-          border-2 border-gray-300 rounded-lg shadow-xl 
+          border-2 border-gray-300 rounded-lg shadow-xl overflow-hidden
           transition-all duration-300 ease-in-out 
           group-hover:shadow-2xl 
           ${imageOnLeft ? 'group-hover:rotate-[1deg]' : 'group-hover:rotate-[-1deg]'}
@@ -41,7 +41,7 @@ export function InfoCard({
           width={3000}
           height={2000}
           objectFit="contain"
-          className="w-full h-auto block"
+          className="w-full h-auto block rounded-b-lg"
         />
       </div>
     </>
@@ -50,7 +50,7 @@ export function InfoCard({
   const TextColumn = (
     <div className="space-y-8">
       <div>
-        <span className=" bg-gradient-to-r from-green-400 to-green-700 text-white px-4 py-2 rounded-full text-base font-semibold uppercase tracking-wider">
+        <span className=" bg-gradient-to-r from-green-600 to-green-500 text-white px-4 py-2 rounded-full text-base font-semibold uppercase tracking-wider">
           {tagName}
         </span>
       </div>
