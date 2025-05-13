@@ -6,6 +6,7 @@ import Image from "next/image"
 import ProductTabs from "@/components/product-tabs"
 import { FeatureCard } from "@/components/feature-card"
 import { useRef, useEffect } from "react";
+import { InfoCard } from "@/components/info-card"
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -257,125 +258,46 @@ export default function Home() {
         </div>
       </section>
       
-      {/* New Two-Column Section */}
-      <section className="container mx-auto px-4 py-20 relative">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-12 bg-white p-8 rounded-xl shadow-xl">
-            {/* Left Column: Text Content */}
-            <div className="md:w-1/2 space-y-6">
-              <div>
-                <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">SOCIAL</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Retention starts with great team culture
-              </h2>
-              <p className="text-lg text-gray-600">
-                Share updates and news directly into social feeds and celebrate achievements.
-              </p>
-              <div>
-                <Link
-                  href="/learn-more" // You can change this link later
-                  className="inline-flex items-center justify-center px-5 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
-                >
-                  Learn more <span className="ml-2">&rarr;</span>
-                </Link>
-              </div>
-            </div>
+    {/* Two-Column Info Sections */}
+      <div className="bg-gray-100 py-20">
+        <InfoCard
+          title="Manage items quickly and precisely"
+          description="Share updates and news directly into social feeds and celebrate achievements."
+          buttonLink="/learn-more"
+          tagName="SOCIAL"
+          imagePath="/2 column/edit_menu.png"
+          imageAlt="Team Culture Image"
+        />
 
-            {/* Right Column: Image */}
-            <div className="md:w-1/2">
-              <Image
-                src="/details section/pancakes.png"
-                alt="Team Culture Image"
-                width={3000}
-                height={2000}
-                objectFit="contain"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="container mx-auto px-4 py-20 relative">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-12 bg-white p-8 rounded-xl shadow-xl">
+        <InfoCard
+          title="Streamline your kitchen operations"
+          description="Optimize your workflow with our intelligent kitchen management system."
+          buttonLink="/kitchen-management"
+          tagName="OPERATIONS"
+          imagePath="/2 column/edit_menu.png"
+          imageAlt="Kitchen Operations"
+          imageOnLeft={true}
+        />
 
-            {/* left Column: Image */}
-            <div className="md:w-1/2">
-              <Image
-                src="/details section/pancakes.png"
-                alt="Team Culture Image"
-                width={3000}
-                height={2000}
-                objectFit="contain"
-                className="rounded-lg"
-              />
-            </div>
+        <InfoCard
+          title="Data-driven nutrition insights"
+          description="Make informed decisions with comprehensive analytics and reporting."
+          buttonLink="/analytics"
+          tagName="ANALYTICS"
+          imagePath="/details section/pancakes.png"
+          imageAlt="Nutrition Analytics"
+        />
 
-            {/* right Column: Text Content */}
-            <div className="md:w-1/2 space-y-6">
-              <div>
-                <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">SOCIAL</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Retention starts with great team culture
-              </h2>
-              <p className="text-lg text-gray-600">
-                Share updates and news directly into social feeds and celebrate achievements.
-              </p>
-              <div>
-                <Link
-                  href="/learn-more" // You can change this link later
-                  className="inline-flex items-center justify-center px-5 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
-                >
-                  Learn more <span className="ml-2">&rarr;</span>
-                </Link>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      </section>
-
-      <section className="container mx-auto px-4 py-20 relative">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-12 bg-white p-8 rounded-xl shadow-xl">
-            {/* Left Column: Text Content */}
-            <div className="md:w-1/2 space-y-6">
-              <div>
-                <span className="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">SOCIAL</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Retention starts with great team culture
-              </h2>
-              <p className="text-lg text-gray-600">
-                Share updates and news directly into social feeds and celebrate achievements.
-              </p>
-              <div>
-                <Link
-                  href="/learn-more" // You can change this link later
-                  className="inline-flex items-center justify-center px-5 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
-                >
-                  Learn more <span className="ml-2">&rarr;</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Image */}
-            <div className="md:w-1/2">
-              <Image
-                src="/details section/pancakes.png"
-                alt="Team Culture Image"
-                width={3000}
-                height={2000}
-                objectFit="contain"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+        <InfoCard
+          title="Seamless integration with your tools"
+          description="Connect with your favorite apps and services for a unified experience."
+          buttonLink="/integrations"
+          tagName="INTEGRATIONS"
+          imagePath="/details section/pancakes.png"
+          imageAlt="Integration Dashboard"
+          imageOnLeft={true}
+        />
+      </div>
 
       {/* Footer */}
       <footer className="bg-gray-100 dark:bg-slate-800 py-8 text-center text-gray-600 dark:text-gray-400 text-sm">
@@ -391,3 +313,4 @@ export default function Home() {
     </div>
   )
 }
+
