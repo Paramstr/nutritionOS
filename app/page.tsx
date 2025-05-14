@@ -4,7 +4,6 @@ import Link from "next/link"
 import { ChevronDown, Send, FolderOpen, Lock, Utensils, CalendarDays, ClipboardList, Star, Building } from "lucide-react"
 import Image from "next/image"
 import { FeatureCard } from "@/components/feature-card"
-import { InfoCard } from "@/components/info-card"
 import { ProductDetailCard } from "@/components/product-detail-card"
 import { FruitButton } from "@/components/FruitButton";
 import { ProductFeatureSection } from "@/components/product-feature-section"
@@ -199,58 +198,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      
-      
-    {/* Two-Column Info Sections */}
-      <div className="bg-gray-100 py-16">
-        {/* Collaboration Features Section */}
-      <section className="container mx-auto px-4 pt-6 pb-3">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-2">Supercharge Nutrition with AI-enabled Gamified Tasks</h2>
-          <p className="text-lg text-gray-600 mb-4 max-w-2xl mx-auto">
-            Earn points, track progress, and achieve nutrition goals through our interactive gamification system.
-          </p>
-        </div>
-      </section>
-        <InfoCard
-          title="Earn points for healthy choices"
-          description="Incentivize making better nutritional choices, tracking meals consistently, and hitting your macro targets with our points-based reward system."
-          buttonLink="/points"
-          tagName="POINTS"
-          imagePath="/2 column/edit_menu.png"
-          imageAlt="Points System Image"
-        />
-
-        <InfoCard
-          title="Reward your progress milestones"
-          description="Celebrate achievements with real rewards. Redeem points at partner stores or unlock premium features as you reach your nutrition goals."
-          buttonLink="/rewards"
-          tagName="REWARDS"
-          imagePath="/2 column/edit_menu.png"
-          imageAlt="Rewards Dashboard"
-          imageOnLeft={true}
-        />
-
-        <InfoCard
-          title="Build community with nutrition social feed"
-          description="Share updates, achievements, and healthy recipes with friends. Create a supportive nutrition community that celebrates success together."
-          buttonLink="/social"
-          tagName="SOCIAL"
-          imagePath="/details section/pancakes.png"
-          imageAlt="Social Feed"
-        />
-
-        <InfoCard
-          title="Data-driven nutrition insights"
-          description="Our AI analyzes your patterns to provide personalized recommendations and highlight areas for improvement, making healthy eating easier than ever."
-          buttonLink="/analytics"
-          tagName="ANALYTICS"
-          imagePath="/details section/pancakes.png"
-          imageAlt="Nutrition Analytics"
-          imageOnLeft={true}
-        />
-      </div>
 
       {/* Perry-Style Gamified Feature Section */}
       <ProductFeatureSection
