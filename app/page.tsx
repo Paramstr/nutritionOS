@@ -104,17 +104,34 @@ export default function Home() {
             <span className="text-sm text-gray-600 ml-2">Trusted by over 10,000 health-conscious users</span>
           </div>
 
-          {/* Placeholder for demo/screenshot */}
-          <div className="mt-16 rounded-2xl max-w-4xl mx-auto relative z-10 shadow-2xl">
-            <Image
-              src="/example-hero-dash-phone.svg"
-              alt="Placeholder App Screenshot"
-              width={2814}
-              height={2092}
-              objectFit="contain"
-              className="rounded-2xl border-4 border-gray-600"
-            />
-          </div> 
+          {/* Hero images with overlay */}
+          <div className="mt-16 max-w-4xl mx-auto relative z-10">
+            <div className="relative">
+              {/* Dashboard base image */}
+              <div className="w-full">
+                <Image
+                  src="/example-hero-dash-phone.svg"
+                  alt="Dashboard Screenshot"
+                  width={2814}
+                  height={2092}
+                  objectFit="contain"
+                  className="w-full h-auto"
+                />
+              </div>
+              
+              {/* Phone overlay positioned on right 1/3rd */}
+              <div className="absolute top-0 right-0 w-1/3 h-full flex items-center justify-end">
+                <Image
+                  src="/example-hero-phone.svg"
+                  alt="Mobile App Screenshot"
+                  width={700}
+                  height={1400}
+                  objectFit="contain"
+                  className="h-[115%] w-auto max-w-full transform translate-x-[10%]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
