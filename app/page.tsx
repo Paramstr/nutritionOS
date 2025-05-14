@@ -7,6 +7,7 @@ import { FeatureCard } from "@/components/feature-card"
 import { InfoCard } from "@/components/info-card"
 import { ProductDetailCard } from "@/components/product-detail-card"
 import { FruitButton } from "@/components/FruitButton";
+import { ProductFeatureSection } from "@/components/product-feature-section"
 
 export default function Home() {
   return (
@@ -107,7 +108,7 @@ export default function Home() {
           {/* Placeholder for demo/screenshot */}
           <div className="mt-16 rounded-2xl max-w-4xl mx-auto relative z-10 shadow-2xl">
             <Image
-              src="/main_screen.png"
+              src="/example-hero-dash-phone.svg"
               alt="Placeholder App Screenshot"
               width={2814}
               height={2092}
@@ -189,98 +190,100 @@ export default function Home() {
           </div>
 
           <div>
-
-          
             <Link
-                href="/get-started"
+              href="/get-started"
                 className="inline-flex items-center justify-center px-12 py-6 bg-black text-white rounded-full text-md font-medium  relative z-10 transition-all duration-300 ease-in-out hover:scale-105 shadow-xl"
-              >
-                See how it works
-              </Link>
-              
-            
-            
+            >
+              See how it works
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Collaboration Features Section */}
-      <section className="container mx-auto px-4 py-20 relative mb-32">
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="mb-2">
-            <span className="bg-blue-100 text-blue-500 px-3 py-1 rounded-full text-sm font-medium">Platform Features</span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 max-w-4xl">
-            All-in-One Nutrition Management
-          </h2>
-
-          <p className="text-xl text-gray-600 mb-16 max-w-3xl">
-            Powerful tools for individuals, kitchens, and managers to optimize nutritional intake and workflow.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <FeatureCard
-              icon={<Utensils className="h-8 w-8" />}
-              title="Personalized Meal Choices"
-              description="Select meals based on your exact macro targets. Clean, simple, effective."
-            />
-
-            <FeatureCard
-              icon={<CalendarDays className="h-8 w-8" />}
-              title="Intelligent Meal Planning"
-              description="Plan your week's nutrition in minutes. Stay on track, effortlessly."
-            />
-
-            <FeatureCard
-              icon={<ClipboardList className="h-8 w-8" />}
-              title="Kitchen & Management Dashboards"
-              description="Dedicated interfaces for kitchens to view orders and for management to oversee operations."
-            />
-          </div>
-        </div>
-      </section>
+      
       
     {/* Two-Column Info Sections */}
-      <div className="bg-gray-100 py-20">
+      <div className="bg-gray-100 py-16">
+        {/* Collaboration Features Section */}
+      <section className="container mx-auto px-4 pt-6 pb-3">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-2">Supercharge Nutrition with AI-enabled Gamified Tasks</h2>
+          <p className="text-lg text-gray-600 mb-4 max-w-2xl mx-auto">
+            Earn points, track progress, and achieve nutrition goals through our interactive gamification system.
+          </p>
+        </div>
+      </section>
         <InfoCard
-          title="Manage items quickly and precisely"
-          description="Share updates and news directly into social feeds and celebrate achievements."
-          buttonLink="/learn-more"
-          tagName="SOCIAL"
+          title="Earn points for healthy choices"
+          description="Incentivize making better nutritional choices, tracking meals consistently, and hitting your macro targets with our points-based reward system."
+          buttonLink="/points"
+          tagName="POINTS"
           imagePath="/2 column/edit_menu.png"
-          imageAlt="Team Culture Image"
+          imageAlt="Points System Image"
         />
 
         <InfoCard
-          title="Streamline your kitchen operations"
-          description="Optimize your workflow with our intelligent kitchen management system."
-          buttonLink="/kitchen-management"
-          tagName="OPERATIONS"
+          title="Reward your progress milestones"
+          description="Celebrate achievements with real rewards. Redeem points at partner stores or unlock premium features as you reach your nutrition goals."
+          buttonLink="/rewards"
+          tagName="REWARDS"
           imagePath="/2 column/edit_menu.png"
-          imageAlt="Kitchen Operations"
+          imageAlt="Rewards Dashboard"
           imageOnLeft={true}
+        />
+
+        <InfoCard
+          title="Build community with nutrition social feed"
+          description="Share updates, achievements, and healthy recipes with friends. Create a supportive nutrition community that celebrates success together."
+          buttonLink="/social"
+          tagName="SOCIAL"
+          imagePath="/details section/pancakes.png"
+          imageAlt="Social Feed"
         />
 
         <InfoCard
           title="Data-driven nutrition insights"
-          description="Make informed decisions with comprehensive analytics and reporting."
+          description="Our AI analyzes your patterns to provide personalized recommendations and highlight areas for improvement, making healthy eating easier than ever."
           buttonLink="/analytics"
           tagName="ANALYTICS"
           imagePath="/details section/pancakes.png"
           imageAlt="Nutrition Analytics"
-        />
-
-        <InfoCard
-          title="Seamless integration with your tools"
-          description="Connect with your favorite apps and services for a unified experience."
-          buttonLink="/integrations"
-          tagName="INTEGRATIONS"
-          imagePath="/details section/pancakes.png"
-          imageAlt="Integration Dashboard"
           imageOnLeft={true}
         />
       </div>
+
+      {/* Perry-Style Gamified Feature Section */}
+      <ProductFeatureSection
+        title="Supercharge Nutrition with AI-enabled Gamified Tasks"
+        subtitle="Earn points, track progress, and achieve nutrition goals through our interactive gamification system."
+        features={[
+          {
+            tagName: "POINTS",
+            title: "Earn points for healthy choices",
+            description: "Incentivize making better nutritional choices, tracking meals consistently, and hitting your macro targets with our points-based reward system.",
+            imagePath: "/2 column/example-iphone-1.svg",
+            imageAlt: "Perry - Earn points",
+            buttonLink: "/points"
+          },
+          {
+            tagName: "REWARDS",
+            title: "Reward your progress milestones",
+            description: "Celebrate achievements with real rewards. Redeem points at partner stores or unlock premium features as you reach your nutrition goals.",
+            imagePath: "/2 column/example-dash-1.svg",
+            imageAlt: "Rewards Dashboard",
+            imageOnLeft: true,
+            buttonLink: "/rewards"
+          },
+          {
+            tagName: "POINTS",
+            title: "Earn points for healthy choices",
+            description: "Incentivize making better nutritional choices, tracking meals consistently, and hitting your macro targets with our points-based reward system.",
+            imagePath: "/2 column/example-dash-2.svg",
+            imageAlt: "Perry - Earn points",
+            buttonLink: "/points"
+          },
+        ]}
+      />
 
       {/* Footer */}
       <footer className="bg-gray-100 dark:bg-slate-800 py-8 text-center text-gray-600 dark:text-gray-400 text-sm">
